@@ -1,14 +1,41 @@
+.navbar {
+  display: flex;
+  justify-content: space-between; /* menu à gauche, logo à droite */
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #FF7F50;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navButtons {
+  display: flex;
+  gap: 0.8rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
 .navButton {
   padding: 0.5rem 1rem;
   border-radius: 8px;
   background-color: rgba(255,255,255,0.2);
   color: white;
-  font-weight: 600;
+  text-decoration: none; /* supprime soulignement */
   text-align: center;
-  text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .navButton:hover {
   background-color: rgba(255,255,255,0.35);
+}
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  color: white;
+  letter-spacing: 2px;
 }
