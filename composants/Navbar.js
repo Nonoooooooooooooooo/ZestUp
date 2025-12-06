@@ -1,1 +1,1 @@
-
+*/ import Link from 'next/link'; export default function Navbar(){ return ( <nav style={{display:'flex', justifyContent:'space-between', padding:'1rem 2rem', backgroundColor:'#FF7F50', color:'white'}}> ZestUp <div style={{display:'flex', gap:'1rem'}}> Home Menus Reservation Order Contact ) }
