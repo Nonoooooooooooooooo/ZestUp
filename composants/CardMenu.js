@@ -1,1 +1,1 @@
-
+export default function CardMenu({menu}){ return ( <div style={{border:'1px solid #ddd', borderRadius:'8px', padding:'1rem', width:'200px', textAlign:'center'}}> <img src={menu.image} alt={menu.title} style={{width:'100%', borderRadius:'8px'}}/> {menu.title} {menu.description} {menu.price} ) }
