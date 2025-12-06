@@ -15,8 +15,8 @@ export default function Navbar() {
       {/* Navigation Buttons à gauche */}
       <div className={styles.navButtons}>
         {navItems.map((item, i) => (
-          <Link key={i} href={item.href} className={styles.navButton}>
-            {item.label}
+          <Link key={i} href={item.href}>
+            <a className={styles.navButton}>{item.label}</a>
           </Link>
         ))}
       </div>
