@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import styles from '../styles/Navbar.module.css';
 
 export default function Navbar() {
   const navItems = [
@@ -12,7 +13,7 @@ export default function Navbar() {
   return (
     <nav style={{
       display: 'flex',
-      justifyContent: 'flex-start',  // tout aligné à gauche
+      justifyContent: 'flex-start',
       alignItems: 'center',
       padding: '1rem 2rem',
       backgroundColor: '#FF7F50',
@@ -23,24 +24,10 @@ export default function Navbar() {
       zIndex: 100,
       gap: '1rem'
     }}>
-      {/* Navigation Buttons (à gauche du logo) */}
+      {/* Navigation Buttons */}
       <div style={{ display: 'flex', gap: '0.8rem', fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}>
         {navItems.map((item, i) => (
-          <Link 
-            key={i} 
-            href={item.href} 
-            style={{
-              padding: '0.5rem 1rem',
-              borderRadius: '8px',
-              backgroundColor: 'rgba(255,255,255,0.2)',
-              color: 'white',
-              textDecoration: 'none',   // plus de soulignement
-              transition: 'all 0.3s ease',
-              textAlign: 'center'
-            }}
-            onMouseEnter={e => e.currentTarget.style.backgroundColor='rgba(255,255,255,0.35)'}
-            onMouseLeave={e => e.currentTarget.style.backgroundColor='rgba(255,255,255,0.2)'}
-          >
+          <Link key={i} href={item.href} className={styles.navButton}>
             {item.label}
           </Link>
         ))}
@@ -51,7 +38,12 @@ export default function Navbar() {
         fontFamily: 'Montserrat, sans-serif',
         fontWeight: '800',
         fontSize: '2rem',
-        marginLeft: '2rem',   // espacement à droite des boutons
+        marginLeft: '2rem',
         color: 'white',
         letterSpacing: '2px'
-      }}
+      }}>
+        ZestUp
+      </div>
+    </nav>
+  )
+}
