@@ -1,9 +1,18 @@
 import Link from 'next/link';
+
 export default function Navbar() {
+  const navItems = [
+    { href: '/', label: 'Home' },
+    { href: '/menus', label: 'Menus' },
+    { href: '/reservation', label: 'Reservation' },
+    { href: '/commande', label: 'Order' },
+    { href: '/contact', label: 'Contact' },
+  ];
+
   return (
     <nav style={{
       display: 'flex',
-      justifyContent: 'space-between',
+      justifyContent: 'flex-start',  // tout aligné à gauche
       alignItems: 'center',
       padding: '1rem 2rem',
       backgroundColor: '#FF7F50',
@@ -11,35 +20,40 @@ export default function Navbar() {
       boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
       position: 'sticky',
       top: 0,
-      zIndex: 100
+      zIndex: 100,
+      gap: '1rem'
     }}>
-      {/* Logo */}
-      <div style={{fontFamily: 'Montserrat', fontWeight: '700', fontSize: '1.8rem'}}>
-        ZestUp
-      </div>
-
-      {/* Navigation */}
-      <div style={{display: 'flex', gap: '1rem'}}>
-        {['/', '/menus', '/reservation', '/commande', '/contact'].map((path, i) => {
-          const labels = ['Home', 'Menus', 'Reservation', 'Order', 'Contact'];
-          return (
-            <Link key={i} href={path} style={{
+      {/* Navigation Buttons (à gauche du logo) */}
+      <div style={{ display: 'flex', gap: '0.8rem', fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}>
+        {navItems.map((item, i) => (
+          <Link 
+            key={i} 
+            href={item.href} 
+            style={{
               padding: '0.5rem 1rem',
               borderRadius: '8px',
               backgroundColor: 'rgba(255,255,255,0.2)',
               color: 'white',
-              fontWeight: 600,
+              textDecoration: 'none',   // plus de soulignement
               transition: 'all 0.3s ease',
               textAlign: 'center'
             }}
             onMouseEnter={e => e.currentTarget.style.backgroundColor='rgba(255,255,255,0.35)'}
             onMouseLeave={e => e.currentTarget.style.backgroundColor='rgba(255,255,255,0.2)'}
-            >
-              {labels[i]}
-            </Link>
-          )
-        })}
+          >
+            {item.label}
+          </Link>
+        ))}
       </div>
-    </nav>
-  )
+
+      {/* Logo */}
+      <div style={{
+        fontFamily: 'Montserrat, sans-serif',
+        fontWeight: '800',
+        fontSize: '2rem',
+        marginLeft: '2rem',   // espacement à droite des boutons
+        color: 'white',
+        letterSpacing: '2px'
+      }}
+
 }
