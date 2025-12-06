@@ -19,9 +19,13 @@ export default function Menus() {
   return (
     <>
       <Navbar />
-      <main style={{padding: '2rem'}}>
-        <h1>Our Menus</h1>
-        <div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
+      <main style={{padding:'4rem 2rem'}}>
+        <h1 style={{textAlign:'center', marginBottom:'3rem', color:'#FF5733'}}>Our Menus</h1>
+        <div style={{
+          display:'grid',
+          gridTemplateColumns:'repeat(auto-fit, minmax(220px, 1fr))',
+          gap:'2rem'
+        }}>
           {menus.map((menu, i) => <CardMenu key={i} menu={menu} />)}
         </div>
       </main>
