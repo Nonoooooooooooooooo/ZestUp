@@ -12,11 +12,11 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbar}>
-      {/* Navigation Buttons à gauche */}
+      {/* Boutons de navigation à gauche */}
       <div className={styles.navButtons}>
         {navItems.map((item, i) => (
           <Link key={i} href={item.href}>
-            <a className={styles.navButton}>{item.label}</a>
+            <span className={styles.navButton}>{item.label}</span>
           </Link>
         ))}
       </div>
@@ -28,3 +28,4 @@ export default function Navbar() {
     </nav>
   );
 }
+
