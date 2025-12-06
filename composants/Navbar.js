@@ -55,5 +55,3 @@ export default function Navbar() {
         color: 'white',
         letterSpacing: '2px'
       }}
-
-}
