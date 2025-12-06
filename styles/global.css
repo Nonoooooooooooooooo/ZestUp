@@ -1,1 +1,4 @@
-body{margin:0;font-family:sans-serif;} button{background-color:#FF7F50;color:white;border:none;padding:0.5rem 1rem;border-radius:5px;cursor:pointer;} button:hover{opacity:0.8;} input, select, textarea{margin-bottom:1rem;padding:0.5rem;border-radius:5px;border:1px solid #ddd;width:100%;}
+body{margin:0;font-family:sans-serif;}
+button{background-color:#FF7F50;color:white;border:none;padding:0.5rem 1rem;border-radius:5px;cursor:pointer;}
+button:hover{opacity:0.8;}
+input, select, textarea{margin-bottom:1rem;padding:0.5rem;border-radius:5px;border:1px solid #ddd;width:100%;}
