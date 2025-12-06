@@ -1,1 +1,1 @@
-
+export default function FormMenuPerso(){ return ( <form style={{display:'flex', flexDirection:'column', maxWidth:'400px', margin:'auto'}}> Starter: Main: Dessert: Drink: Notes: <button type='submit' style={{marginTop:'1rem'}}>Submit ) }
