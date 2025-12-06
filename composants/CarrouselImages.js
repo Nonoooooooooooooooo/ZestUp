@@ -1,1 +1,1 @@
-
+export default function CarrouselImages(){ const images=['/images/menu1.jpg','/images/menu2.jpg','/images/menu3.jpg']; return ( <div style={{display:'flex', overflowX:'auto', gap:'1rem', marginTop:'1rem'}}> {images.map((img,i)=><img key={i} src={img} style={{height:'200px', borderRadius:'8px'}}/>) } ) }
