@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import styles from "../styles/CarrouselMenus.module.css";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import Image from 'next/image';
 
 const commandes = [
   { name: "Plat 1", image: "/images/plat1.jpg" },
@@ -22,7 +23,7 @@ export default function CarrouselCommandes() {
       <div ref={carouselRef} className={styles.carrousel}>
         {commandes.map((plat, i) => (
           <div key={i} className={styles.menuCard}>
-            <img src={plat.image} alt={plat.name} />
+            <Image src={plat.image} alt={plat.name} width={250} height={150} style={{ objectFit: 'cover' }} />
             <h3>{plat.name}</h3>
             <button>Commander</button>
           </div>
@@ -34,4 +35,3 @@ export default function CarrouselCommandes() {
     </div>
   );
 }
-
