@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 const commandes = [
   { name: "Plat 1", image: "/images/plat1.jpg" },
   { name: "Plat 2", image: "/images/plat2.jpg" },
