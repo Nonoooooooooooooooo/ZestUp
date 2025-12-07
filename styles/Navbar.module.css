@@ -2,8 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 1.5rem 2rem; /* padding vertical + horizontal */
+  width: 100%;               /* pleine largeur */
+  padding: 1.5rem 4rem;      /* vertical 1.5rem, horizontal 4rem → visuellement longue */
   background: linear-gradient(90deg, #ff7f50, #ff5f2e);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   position: sticky;
@@ -16,18 +16,17 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
 }
 
 .logo img {
-  height: 50px; /* ajuste la taille de ton logo */
+  height: 50px;   /* taille du logo */
   width: auto;
 }
 
 /* Menu desktop */
 .menu {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem; /* espacement plus grand pour allonger visuellement la navbar */
   align-items: center;
 }
 
@@ -35,7 +34,7 @@
   text-decoration: none;
   color: white;
   font-weight: 600;
-  padding: 0.7rem 1.2rem; /* augmente la “longueur” visuelle du bouton */
+  padding: 0.7rem 1.2rem;
   border-radius: 8px;
   background: rgba(255,255,255,0.15);
   transition: all 0.25s ease;
@@ -61,8 +60,8 @@
   padding: 1rem;
   gap: 1rem;
   position: absolute;
-  top: 80px; /* adapté à la navbar */
-  right: 20px;
+  top: 90px; /* adapté à la hauteur de la navbar */
+  right: 5%;
   border-radius: 12px;
   box-shadow: 0 3px 12px rgba(0,0,0,0.25);
   width: 90vw; /* prend presque toute la largeur sur mobile */
@@ -73,6 +72,9 @@
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    padding: 1.2rem 1.5rem; /* moins de padding horizontal sur mobile */
+  }
   .menu { display: none; }
   .menuMobileIcon { display: block; }
 }
