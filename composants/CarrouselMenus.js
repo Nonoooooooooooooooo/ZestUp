@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import styles from "../styles/CarrouselMenus.module.css";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import Image from 'next/image';
 
 const menus = [
   { name: "Menu 1", image: "/images/menu1.jpg" },
@@ -13,13 +14,8 @@ const menus = [
 export default function CarrouselMenus() {
   const carouselRef = useRef(null);
 
-  const scrollLeft = () => {
-    carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
-  };
-
-  const scrollRight = () => {
-    carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
-  };
+  const scrollLeft = () => carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
+  const scrollRight = () => carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
 
   return (
     <div className={styles.carrouselContainer}>
@@ -29,7 +25,7 @@ export default function CarrouselMenus() {
       <div ref={carouselRef} className={styles.carrousel}>
         {menus.map((menu, i) => (
           <div key={i} className={styles.menuCard}>
-            <img src={menu.image} alt={menu.name} />
+            <Image src={menu.image} alt={menu.name} width={250} height={150} style={{ objectFit: 'cover' }} />
             <h3>{menu.name}</h3>
             <button>Voir le menu</button>
           </div>
@@ -41,3 +37,4 @@ export default function CarrouselMenus() {
     </div>
   );
 }
+
