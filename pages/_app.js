@@ -8,7 +8,7 @@ export default function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>ZestUp !</title>
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/logo.png" />
       </Head>
 
       <Navbar />
