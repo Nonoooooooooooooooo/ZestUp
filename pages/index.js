@@ -9,9 +9,15 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
+      <div className="sectionBlock">
       <h2 className="sectionTitle">Nos Menus</h2>
+      <p className="sectionSubtitle">Une sélection gourmande pour tous les goûts</p>
+      </div>
       <CarrouselMenus />
-      <h2 className="sectionTitle">À commander directement</h2>
+      <div className="sectionBlock">
+      <h2 className="sectionTitle">À Commander</h2>
+      <p className="sectionSubtitle">Commandez vos plats préférés en un clic</p>
+      </div>
       <CarrouselCommandes />
       <Footer />
     </>
