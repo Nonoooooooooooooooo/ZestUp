@@ -12,20 +12,17 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbar}>
-      {/* Menu boutons à gauche */}
       <div className={styles.navButtons}>
         {navItems.map((item, i) => (
-          <Link key={i} href={item.href}>
-            <span className={styles.navButton}>{item.label}</span>
+          <Link key={i} href={item.href} legacyBehavior>
+            <a className={styles.navButton}>{item.label}</a>
           </Link>
         ))}
       </div>
 
-      {/* Logo à droite */}
       <div className={styles.logo}>
         ZestUp
       </div>
     </nav>
   );
 }
-
