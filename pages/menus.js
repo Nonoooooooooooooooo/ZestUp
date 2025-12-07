@@ -4,34 +4,34 @@ import styles from "../styles/Menus.module.css";
 
 const menus = [
   {
-    name: "Explosion Méditerranéenne",
-    slug: "mediterranean",
-    image: "/images/mediterranean.jpg",
-    description: "Un voyage ensoleillé aux saveurs fraîches et authentiques."
+    name: "Menu 1",
+    slug: "menu1",
+    image: "/images/menu1.jpg",
+    description: "Un menu savoureux et équilibré pour tous les goûts."
   },
   {
-    name: "Saveurs du Monde",
-    slug: "world-food",
-    image: "/images/world_food.jpg",
-    description: "Une tournée gourmande à travers les cuisines du globe."
+    name: "Menu 2",
+    slug: "menu2",
+    image: "/images/menu2.jpg",
+    description: "Des plats gourmands, frais et faits maison."
   },
   {
-    name: "Street-Food Gourmet",
-    slug: "street-food",
-    image: "/images/street_food.jpg",
-    description: "Le meilleur de la street-food revisité façon maison."
+    name: "Menu 3",
+    slug: "menu3",
+    image: "/images/menu3.jpg",
+    description: "Une explosion de saveurs inspirée des cuisines du monde."
   },
   {
-    name: "Végétal & Healthy",
-    slug: "vege-healthy",
-    image: "/images/vege.jpg",
-    description: "Des plats équilibrés et gourmands pour tous."
+    name: "Menu 4",
+    slug: "menu4",
+    image: "/images/menu4.jpg",
+    description: "Des recettes originales pour surprendre vos papilles."
   },
   {
-    name: "Chef Gastronomique",
-    slug: "gastronomique",
-    image: "/images/gastro.jpg",
-    description: "Une expérience culinaire raffinée et élégante."
+    name: "Menu 5",
+    slug: "menu5",
+    image: "/images/menu5.jpg",
+    description: "Le meilleur de la cuisine traditionnelle revisité."
   }
 ];
 
@@ -58,3 +58,4 @@ export default function MenusPage() {
     </div>
   );
 }
+
