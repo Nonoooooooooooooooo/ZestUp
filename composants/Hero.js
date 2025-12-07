@@ -5,6 +5,7 @@ import Link from 'next/link';
 export default function Hero() {
   return (
     <section className={styles.hero}>
+      {/* Cadre semi-transparent avec texte et bouton */}
       <div className={styles.heroOverlay}>
         <h1>Explosion de saveurs à domicile</h1>
         <p>Découvrez nos menus, commandez vos plats préférés ou réservez un chef chez vous.</p>
@@ -13,8 +14,9 @@ export default function Hero() {
         </Link>
       </div>
 
+      {/* Image de fond haute résolution */}
       <Image
-        src="/images/hero.jpg" // mets une image de haute résolution ici
+        src="/images/hero-highres.jpg" // Assure-toi que l'image est haute résolution (1920px+)
         alt="Hero ZestUp"
         fill
         style={{ objectFit: 'cover', zIndex: -1 }}
