@@ -47,13 +47,14 @@ export default function MenusPage() {
         <div className={styles.menuGrid}>
           {menus.map((menu) => (
             <Link key={menu.slug} href={`/menus/${menu.slug}`} className={styles.menuCard}>
+              <div className={styles.imageWrapper}>
               <Image
                 src={menu.image}
                 alt={menu.name}
-                width={300}
-                height={180}
+                fill
                 style={{ objectFit: "cover", borderRadius: "12px" }}
               />
+              </div>
               <h3 className={styles.menuTitle}>{menu.name}</h3>
               <p className={styles.menuDescription}>{menu.description}</p>
             </Link>
