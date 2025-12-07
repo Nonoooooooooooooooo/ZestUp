@@ -1,4 +1,6 @@
-import styles from '../styles/CarrouselMenus.module.css';
+import { useRef } from "react";
+import styles from "../styles/CarrouselMenus.module.css";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const menus = [
   { name: "Menu 1", image: "/images/menu1.jpg" },
@@ -9,15 +11,33 @@ const menus = [
 ];
 
 export default function CarrouselMenus() {
+  const carouselRef = useRef(null);
+
+  const scrollLeft = () => {
+    carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
+  };
+
+  const scrollRight = () => {
+    carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
+  };
+
   return (
-    <section className={styles.carrousel}>
-      {menus.map((menu, i) => (
-        <div key={i} className={styles.menuCard}>
-          <img src={menu.image} alt={menu.name} />
-          <h3>{menu.name}</h3>
-          <button>Voir le menu</button>
-        </div>
-      ))}
-    </section>
+    <div className={styles.carrouselContainer}>
+      <button className={`${styles.arrowButton} ${styles.arrowLeft}`} onClick={scrollLeft}>
+        <FiChevronLeft />
+      </button>
+      <div ref={carouselRef} className={styles.carrousel}>
+        {menus.map((menu, i) => (
+          <div key={i} className={styles.menuCard}>
+            <img src={menu.image} alt={menu.name} />
+            <h3>{menu.name}</h3>
+            <button>Voir le menu</button>
+          </div>
+        ))}
+      </div>
+      <button className={`${styles.arrowButton} ${styles.arrowRight}`} onClick={scrollRight}>
+        <FiChevronRight />
+      </button>
+    </div>
   );
 }
