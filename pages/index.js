@@ -9,14 +9,14 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <div className="sectionBlock">
+      <div className="sectionWrapper">
       <h2 className="sectionTitle">Nos Menus</h2>
-      <p className="sectionSubtitle">Une sélection gourmande pour tous les goûts</p>
+      <p className="sectionSubtitle">Découvrez nos créations culinaires uniques</p>
       </div>
       <CarrouselMenus />
-      <div className="sectionBlock">
+      <div className="sectionWrapper">
       <h2 className="sectionTitle">À Commander</h2>
-      <p className="sectionSubtitle">Commandez vos plats préférés en un clic</p>
+      <p className="sectionSubtitle">Des plats prêts à savourer, préparés avec passion</p>
       </div>
       <CarrouselCommandes />
       <Footer />
