@@ -51,3 +51,12 @@
   color: #555;
   line-height: 1.4;
 }
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* ratio 16:9 pour que l'image garde ses proportions */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
