@@ -5,13 +5,14 @@
   padding: 1rem 3rem;
   background-color: #FF7F50;
   color: white;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
   position: sticky;
   top: 0;
   z-index: 100;
-  min-height: 70px; /* hauteur pour que tout soit visible */
+  min-height: 72px;
 }
 
+/* conteneur des boutons */
 .navButtons {
   display: flex;
   gap: 1rem;
@@ -19,23 +20,29 @@
   font-weight: 600;
 }
 
+/* style des boutons (liens) */
 .navButton {
+  display: inline-block;
   padding: 0.6rem 1.2rem;
   border-radius: 10px;
-  background-color: rgba(255,255,255,0.2);
-  color: white;
+  background-color: rgba(255,255,255,0.18);
+  color: white !important;
+  text-decoration: none !important;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.22s ease, transform 0.18s ease;
+  font-size: 0.98rem;
 }
 
 .navButton:hover {
-  background-color: rgba(255,255,255,0.35);
+  background-color: rgba(255,255,255,0.33);
+  transform: translateY(-2px);
 }
 
+/* logo à droite */
 .logo {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   color: white;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 }
