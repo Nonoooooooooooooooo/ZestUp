@@ -13,7 +13,7 @@ export default function Navbar() {
       {/* Logo réel */}
       <div className={styles.logo}>
         <Link href="/">
-          <img src="/images/logo.png" alt="ZestUp Logo" />
+          <img src="public/images/logo.png" alt="ZestUp Logo" />
         </Link>
       </div>
 
