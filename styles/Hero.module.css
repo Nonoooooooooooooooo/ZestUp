@@ -1,0 +1,32 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 80vh; /* hauteur de l'écran */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/images/hero.jpg'); /* remplace par ton image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.heroOverlay {
+  background: rgba(0,0,0,0.35); /* semi-transparent noir */
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  max-width: 600px;
+}
+
+.heroOverlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.heroOverlay p {
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+}
