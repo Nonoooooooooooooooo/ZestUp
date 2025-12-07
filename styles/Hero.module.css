@@ -5,26 +5,62 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .heroOverlay {
-  background: rgba(0,0,0,0.35);
+  background: rgba(0,0,0,0.4);
   padding: 2rem 3rem;
   border-radius: 12px;
   text-align: center;
   color: white;
   max-width: 600px;
-  z-index: 1;
   position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
 }
 
 .heroOverlay h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
   font-family: 'Montserrat', sans-serif;
 }
 
 .heroOverlay p {
   font-size: 1.2rem;
+  margin-bottom: 1.5rem;
   font-family: 'Poppins', sans-serif;
+}
+
+.heroOverlay button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background: #ff7f50;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.heroOverlay button:hover {
+  background: #ff5f2e;
+  transform: translateY(-2px);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .heroOverlay h1 {
+    font-size: 2rem;
+  }
+  .heroOverlay p {
+    font-size: 1rem;
+  }
 }
