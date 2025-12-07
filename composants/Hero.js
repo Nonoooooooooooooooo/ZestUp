@@ -16,7 +16,7 @@ export default function Hero() {
 
       {/* Image de fond haute résolution */}
       <Image
-        src="/images/hero-highres.jpg" // Assure-toi que l'image est haute résolution (1920px+)
+        src="/images/hero.jpg" // Assure-toi que l'image est haute résolution (1920px+)
         alt="Hero ZestUp"
         fill
         style={{ objectFit: 'cover', zIndex: -1 }}
