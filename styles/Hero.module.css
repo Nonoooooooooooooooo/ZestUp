@@ -1,6 +1,8 @@
+/* Hero.module.css */
+
 .hero {
   position: relative;
-  width: 100%;
+  width: 100vw; /* plein écran horizontal */
   height: 80vh;
   display: flex;
   align-items: center;
@@ -10,11 +12,12 @@
 
 .heroOverlay {
   background: rgba(0,0,0,0.4);
-  padding: 2rem 3rem;
+  padding: 2rem 1.5rem;
   border-radius: 12px;
   text-align: center;
   color: white;
   max-width: 600px;
+  width: 90%;
   position: relative;
   z-index: 1;
   animation: fadeInUp 1s ease forwards;
@@ -62,5 +65,9 @@
   }
   .heroOverlay p {
     font-size: 1rem;
+  }
+  .heroOverlay {
+    width: 95%;
+    padding: 1.5rem 1rem;
   }
 }
