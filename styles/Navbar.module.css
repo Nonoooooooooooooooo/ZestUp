@@ -1,48 +1,88 @@
 .navbar {
   display: flex;
-  justify-content: space-between; /* menu à gauche, logo à droite */
+  justify-content: space-between;
   align-items: center;
-  padding: 1rem 3rem;
-  background-color: #FF7F50;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #ff7f50, #ff8f6a);
   color: white;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   position: sticky;
   top: 0;
-  z-index: 100;
-  min-height: 72px;
+  z-index: 1000;
 }
 
-/* conteneur des boutons */
-.navButtons {
-  display: flex;
-  gap: 1rem;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-}
-
-/* style des boutons (liens) */
-.navButton {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  border-radius: 10px;
-  background-color: rgba(255,255,255,0.18);
-  color: white !important;
-  text-decoration: none !important;
-  cursor: pointer;
-  transition: background-color 0.22s ease, transform 0.18s ease;
-  font-size: 0.98rem;
-}
-
-.navButton:hover {
-  background-color: rgba(255,255,255,0.33);
-  transform: translateY(-2px);
-}
-
-/* logo à droite */
+/* Partie gauche : logo */
 .logo {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: 2.1rem;
-  color: white;
-  letter-spacing: 1.5px;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
+
+.logoAccent {
+  color: #ffffff;
+  background: rgba(255,255,255,0.25);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+}
+
+/* Partie droite : menu desktop */
+.menu {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.navLink {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: 0.25s;
+}
+
+.navLink:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ----- VERSION MOBILE ----- */
+
+.menuMobileIcon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.menuMobile {
+  display: none;
+  flex-direction: column;
+  background-color: #ff7f50;
+  padding: 1rem;
+  gap: 1rem;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .menuMobileIcon {
+    display: block;
+  }
+
+  .menuMobile.open {
+    display: flex;
+  }
+}
+
