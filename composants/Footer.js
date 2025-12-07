@@ -1,14 +1,23 @@
-export default function Footer(){
+import styles from '../styles/Footer.module.css';
+
+export default function Footer() {
   return (
-    <footer style={{
-      textAlign:'center',
-      padding:'1.5rem',
-      backgroundColor:'#FF7F50',
-      color:'white',
-      marginTop:'2rem',
-      boxShadow:'0 -4px 6px rgba(0,0,0,0.1)'
-    }}>
-      <p>© 2025 ZestUp. All rights reserved.</p>
+    <footer className={styles.footer}>
+      <h3>ZestUp</h3>
+
+      <p>Contact : contact@zestup</p>
+      <p>Téléphone : +33 6 </p>
+      <p>Adresse : 123 France</p>
+
+      <div className={styles.socials}>
+        <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
+      </div>
+
+      <p><a href="/mentions-legales">Mentions légales</a></p>
+      <p><a href="/politique-confidentialite">Politique de confidentialité</a></p>
+      <p>&copy; 2025 ZestUp. Tous droits réservés.</p>
     </footer>
-  )
+  );
 }
