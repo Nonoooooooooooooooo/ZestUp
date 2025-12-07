@@ -6,33 +6,33 @@ import styles from "../styles/Menus.module.css";
 
 const menus = [
   {
-    name: "Menu 1",
+    name: "Explosion Méditérranéenne",
     slug: "menu1",
-    image: "/images/menu1.png",
+    image: "/images/menu1.jpg.jpg",
     description: "Un menu savoureux et équilibré pour tous les goûts."
   },
   {
-    name: "Menu 2",
+    name: "Autour du Monde",
     slug: "menu2",
-    image: "/images/menu2.png",
+    image: "/images/menu2.jpg.jpg",
     description: "Des plats gourmands, frais et faits maison."
   },
   {
-    name: "Menu 3",
+    name: "Street Food Gourmande",
     slug: "menu3",
-    image: "/images/menu3.png",
+    image: "/images/menu3.jpg.jpg",
     description: "Une explosion de saveurs inspirée des cuisines du monde."
   },
   {
-    name: "Menu 4",
+    name: "Green and Healthy",
     slug: "menu4",
-    image: "/images/menu4.png",
+    image: "/images/menu4.jpg.jpg",
     description: "Des recettes originales pour surprendre vos papilles."
   },
   {
-    name: "Menu 5",
+    name: "Gastronomie gourmet",
     slug: "menu5",
-    image: "/images/menu5.png",
+    image: "/images/menu5.jpg.jpg",
     description: "Le meilleur de la cuisine traditionnelle revisité."
   }
 ];
