@@ -9,9 +9,9 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <h2 style={{textAlign:"center", margin:"2rem 0"}}>Nos menus</h2>
+      <h2 className="sectionTitle">Nos Menus</h2>
       <CarrouselMenus />
-      <h2 style={{textAlign:"center", margin:"2rem 0"}}>À commander directement</h2>
+      <h2 className="sectionTitle">À commander directement</h2>
       <CarrouselCommandes />
       <Footer />
     </>
