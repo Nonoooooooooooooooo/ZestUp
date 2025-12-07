@@ -14,7 +14,7 @@ export default function Hero() {
       </div>
 
       <Image
-        src="/images/hero-highres.jpg" // mets une image de haute résolution ici
+        src="/images/hero.jpg" // mets une image de haute résolution ici
         alt="Hero ZestUp"
         fill
         style={{ objectFit: 'cover', zIndex: -1 }}
