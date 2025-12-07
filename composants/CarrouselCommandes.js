@@ -1,4 +1,7 @@
-import { useRef } from 'react';
+import { useRef } from "react";
+import styles from "../styles/CarrouselMenus.module.css";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+
 const commandes = [
   { name: "Plat 1", image: "/images/plat1.jpg" },
   { name: "Plat 2", image: "/images/plat2.jpg" },
