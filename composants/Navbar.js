@@ -10,12 +10,14 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbar}>
+      {/* Logo réel */}
       <div className={styles.logo}>
         <Link href="/">
-          <span className={styles.logoAccent}>ZestUp</span>
+          <img src="/images/logo.png" alt="ZestUp Logo" />
         </Link>
       </div>
 
+      {/* Menu desktop */}
       <div className={styles.menu}>
         <Link className={styles.navLink} href="/">Accueil</Link>
         <Link className={styles.navLink} href="/menus">Menus</Link>
@@ -23,12 +25,12 @@ export default function Navbar() {
         <Link className={styles.navLink} href="/reservation">Réservation</Link>
       </div>
 
-      {/* Mobile menu icon */}
+      {/* Icône menu mobile */}
       <div className={styles.menuMobileIcon} onClick={toggleMenu}>
         <FiMenu />
       </div>
 
-      {/* Mobile menu */}
+      {/* Menu mobile */}
       <div className={`${styles.menuMobile} ${menuOpen ? 'open' : ''}`}>
         <Link className={styles.navLink} href="/" onClick={toggleMenu}>Accueil</Link>
         <Link className={styles.navLink} href="/menus" onClick={toggleMenu}>Menus</Link>
@@ -38,3 +40,4 @@ export default function Navbar() {
     </nav>
   );
 }
+
