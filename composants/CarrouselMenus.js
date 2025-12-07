@@ -6,27 +6,27 @@ import Image from "next/image";
 const menus = [
   { 
     name: "Menu Méditerranéen", 
-    image: "/images/menu1.jpg",
+    image: "/images/menu1.jpg.jpg",
     description: "Saveurs fraîches du soleil : olives, herbes, poissons & épices douces."
   },
   { 
     name: "Menu du Monde", 
-    image: "/images/menu2.jpg",
+    image: "/images/menu2.jpg.jpg",
     description: "Une sélection gourmande inspirée des cuisines internationales."
   },
   { 
     name: "Street Food Gourmet", 
-    image: "/images/menu3.jpg",
+    image: "/images/menu3.jpg.jpg",
     description: "Le meilleur de la street-food revisité en version premium."
   },
   { 
     name: "Menu Végétal & Healthy", 
-    image: "/images/menu4.jpg",
+    image: "/images/menu4.jpg.jpg",
     description: "Plats équilibrés, gourmands et adaptés à tous les régimes."
   },
   { 
     name: "Menu Gastronomique", 
-    image: "/images/menu5.jpg",
+    image: "/images/menu5.jpg.jpg",
     description: "Une expérience culinaire raffinée, inspirée de la haute cuisine."
   }
 ];
