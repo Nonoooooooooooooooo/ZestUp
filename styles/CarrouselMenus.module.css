@@ -1,9 +1,33 @@
-/* CarrouselMenus.module.css */
-
 .carrouselContainer {
   position: relative;
   width: 100%;
-  padding: 2rem 1rem;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.arrowButton {
+  background: #ff5f2e;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.6rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.arrowButton:hover {
+  transform: scale(1.15);
+  background: #ff7a4d;
+}
+
+.arrowLeft {
+  margin-left: 10px;
+}
+
+.arrowRight {
+  margin-right: 10px;
 }
 
 .carrousel {
@@ -11,80 +35,50 @@
   overflow-x: auto;
   scroll-behavior: smooth;
   gap: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.carrousel::-webkit-scrollbar {
+  display: none;
 }
 
 .menuCard {
-  min-width: 250px;
-  border-radius: 12px;
-  overflow: hidden;
+  min-width: 260px;
   background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  flex-shrink: 0;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.menuCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+.menuTitle {
+  margin-top: 0.7rem;
+  font-size: 1.3rem;
+  font-weight: 700;
 }
 
-.menuCard img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
+.menuDescription {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0.5rem 0 1rem;
+  line-height: 1.3;
+  padding: 0 5px;
 }
 
-.menuCard h3 {
-  margin: 0.5rem;
-  font-family: 'Poppins', sans-serif;
-}
-
-.menuCard button {
-  margin: 0.5rem;
-  padding: 0.4rem 0.8rem;
-  border: none;
-  background-color: #ff7f50;
+/* Bouton Voir le menu */
+.menuButton {
+  background: #ff5f2e;
   color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.menuCard button:hover {
-  background-color: #ff5f2e;
-}
-
-/* Flèches desktop */
-.arrowButton {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.8);
   border: none;
-  border-radius: 50%;
-  padding: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 1.5rem;
-  z-index: 10;
-  transition: background 0.3s ease;
+  transition: 0.25s ease;
 }
 
-.arrowButton:hover {
-  background: rgba(255,255,255,1);
-}
-
-.arrowLeft {
-  left: 10px;
-}
-
-.arrowRight {
-  right: 10px;
-}
-
-@media (max-width: 768px) {
-  .arrowButton {
-    display: none; /* pas de flèches sur mobile */
-  }
+.menuButton:hover {
+  background: #ff7749;
+  transform: translateY(-2px);
 }
