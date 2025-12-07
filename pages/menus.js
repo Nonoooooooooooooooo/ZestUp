@@ -1,35 +1,60 @@
-import Navbar from '../composants/Navbar';
-import Footer from '../composants/Footer';
-import CardMenu from '../composants/CardMenu';
+import Link from "next/link";
+import Image from "next/image";
+import styles from "../styles/Menus.module.css";
 
 const menus = [
-  {title: 'Mediterranean', description: 'Hummus, Grilled Chicken, Fig Tart', price: '$25', image: '/images/menu1.jpg'},
-  {title: 'Asian', description: 'Sushi platter, Veggie Wok, Mochi', price: '$30', image: '/images/menu2.jpg'},
-  {title: 'Italian', description: 'Bruschetta, Lasagna, Tiramisu', price: '$28', image: '/images/menu3.jpg'},
-  {title: 'French', description: 'Salade Niçoise, Coq au vin, Crème brûlée', price: '$35', image: '/images/menu4.jpg'},
-  {title: 'Vegetarian', description: 'Lentil soup, Veggie curry, Brownie', price: '$22', image: '/images/menu5.jpg'},
-  {title: 'Street Food', description: 'Gourmet Burger, Fries, Milkshake', price: '$20', image: '/images/menu6.jpg'},
-  {title: 'Exotic', description: 'Ceviche, Shrimp skewers, Panna cotta', price: '$32', image: '/images/menu7.jpg'},
-  {title: 'Breakfast', description: 'Pancakes, Eggs Benedict, Fresh Juice', price: '$18', image: '/images/menu8.jpg'},
-  {title: 'Gourmet', description: 'Foie gras, Filet mignon, Chocolate fondant', price: '$45', image: '/images/menu9.jpg'},
-  {title: 'Brunch', description: 'Avocado toast, Fruit salad, Smoothie bowl', price: '$24', image: '/images/menu10.jpg'},
+  {
+    name: "Explosion Méditerranéenne",
+    slug: "mediterranean",
+    image: "/images/mediterranean.jpg",
+    description: "Un voyage ensoleillé aux saveurs fraîches et authentiques."
+  },
+  {
+    name: "Saveurs du Monde",
+    slug: "world-food",
+    image: "/images/world_food.jpg",
+    description: "Une tournée gourmande à travers les cuisines du globe."
+  },
+  {
+    name: "Street-Food Gourmet",
+    slug: "street-food",
+    image: "/images/street_food.jpg",
+    description: "Le meilleur de la street-food revisité façon maison."
+  },
+  {
+    name: "Végétal & Healthy",
+    slug: "vege-healthy",
+    image: "/images/vege.jpg",
+    description: "Des plats équilibrés et gourmands pour tous."
+  },
+  {
+    name: "Chef Gastronomique",
+    slug: "gastronomique",
+    image: "/images/gastro.jpg",
+    description: "Une expérience culinaire raffinée et élégante."
+  }
 ];
 
-export default function Menus() {
+export default function MenusPage() {
   return (
-    <>
-      <Navbar />
-      <main style={{padding:'4rem 2rem'}}>
-        <h1 style={{textAlign:'center', marginBottom:'3rem', color:'#FF5733'}}>Our Menus</h1>
-        <div style={{
-          display:'grid',
-          gridTemplateColumns:'repeat(auto-fit, minmax(220px, 1fr))',
-          gap:'2rem'
-        }}>
-          {menus.map((menu, i) => <CardMenu key={i} menu={menu} />)}
-        </div>
-      </main>
-      <Footer />
-    </>
-  )
+    <div className={styles.container}>
+      <h1 className={styles.pageTitle}>Nos Menus</h1>
+
+      <div className={styles.menuGrid}>
+        {menus.map((menu) => (
+          <Link key={menu.slug} href={`/menus/${menu.slug}`} className={styles.menuCard}>
+            <Image
+              src={menu.image}
+              alt={menu.name}
+              width={300}
+              height={180}
+              style={{ objectFit: "cover", borderRadius: "12px" }}
+            />
+            <h3 className={styles.menuTitle}>{menu.name}</h3>
+            <p className={styles.menuDescription}>{menu.description}</p>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
 }
