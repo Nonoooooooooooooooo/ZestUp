@@ -1,67 +1,78 @@
 .container {
-  max-width: 1100px;
-  margin: auto;
+  max-width: 900px;
+  margin: 0 auto;
   padding: 2rem;
-  font-family: "Poppins", sans-serif;
+  text-align: center;
 }
 
 .title {
-  text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 0.5rem;
+  color: #ff5722;
+  font-weight: 800;
 }
 
 .description {
-  text-align: center;
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  opacity: 0.8;
+  color: #444;
 }
 
-.sections {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+.sectionsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
-.card {
-  background: #ffffffdd;
+.sectionCard {
+  background: #fff;
   padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #ff6a00;
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sectionImage {
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  object-fit: cover;
 }
 
-.cardTitle {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+.sectionDesc {
+  font-size: 1.1rem;
+  color: #555;
 }
 
-.image {
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
-
-.toggleButton {
-  background: #ff7f50;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  margin-top: 1rem;
-}
-
-.details {
-  background: #ffe5d6;
+.detailsBox {
+  background: #f7f7f7;
   padding: 1rem;
+  border-radius: 10px;
+  width: 100%;
+  text-align: left;
   margin-top: 1rem;
-  border-radius: 8px;
+  cursor: pointer;
+}
+
+.detailsBox summary {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: .5rem;
 }
 
 .avisSection {
   margin-top: 3rem;
   padding: 2rem;
-  background: #f8f8f8;
-  border-radius: 12px;
-  text-align: center;
+  background: #fff3ec;
+  border-radius: 15px;
 }
