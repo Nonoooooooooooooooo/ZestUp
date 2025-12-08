@@ -1,51 +1,33 @@
 const menusData = {
-  "gourmet-italien": {
-    title: "Menu Gourmet Italien",
-    description: "Un voyage culinaire inspiré des saveurs authentiques d’Italie.",
-    sections: {
-      entree: {
-        name: "Bruschetta Classica",
-        image: "/images/bruschetta.jpg",
-        desc: "Pain grillé garni de tomates fraîches, basilic et huile d’olive.",
-        details: {
-          ingredients: "Tomates, basilic, huile d'olive, ail, pain",
-          allergens: "Gluten"
-        }
-      },
-      plat: {
-        name: "Pâtes Carbonara",
-        image: "/images/carbonara.jpg",
-        desc: "Recette traditionnelle avec guanciale, pecorino et poivre noir.",
-        details: {
-          ingredients: "Pâtes, guanciale, fromage pecorino, oeufs, poivre",
-          allergens: "Gluten, oeufs, lactose"
-        }
-      },
-      dessert: {
-        name: "Tiramisu Maison",
-        image: "/images/tiramisu.jpg",
-        desc: "Un dessert onctueux au café et cacao.",
-        details: {
-          ingredients: "Mascarpone, café, cacao, sucre, oeufs, biscuits",
-          allergens: "Gluten, oeufs, lactose"
-        }
-      },
-      accompagnement: {
-        name: "Focaccia",
-        image: "/images/focaccia.jpg",
-        desc: "Focaccia parfumée aux herbes et huile d'olive.",
-        details: {
-          ingredients: "Farine, huile d'olive, sel, romarin",
-          allergens: "Gluten"
-        }
-      }
-    }
+  menu1: {
+    title: "Explosion Méditerranéenne",
+    description: "Un menu savoureux inspiré des saveurs du sud.",
+    sections: { /* à remplir */ }
   },
 
-  // Tu pourras ajouter d'autres menus ici :
-  // "brunch-du-soleil": { ... },
-  // "fusion-asiatique": { ... },
-  // etc.
-}
+  menu2: {
+    title: "Autour du Monde",
+    description: "Voyagez avec une sélection de plats internationaux.",
+    sections: { /* à remplir */ }
+  },
+
+  menu3: {
+    title: "Street Food Gourmande",
+    description: "Des classiques gourmands revisités façon street-food.",
+    sections: { /* à remplir */ }
+  },
+
+  menu4: {
+    title: "Green & Healthy",
+    description: "Des recettes équilibrées et savoureuses.",
+    sections: { /* à remplir */ }
+  },
+
+  menu5: {
+    title: "Gastronomie Gourmet",
+    description: "Une cuisine raffinée et élégante.",
+    sections: { /* à remplir */ }
+  },
+};
 
 export default menusData;
