@@ -28,12 +28,12 @@ export default function Navbar() {
         {session ? (
           <>
             <span className={styles.navUser}>Bonjour {session.user.name}</span>
-            <button className={styles.navButton} onClick={() => signOut({ callbackUrl: "/" })}>
+            <button className={`${styles.navButton} ${styles.navLogin}`} onClick={() => signOut({ callbackUrl: "/" })}>
               Déconnexion
             </button>
           </>
         ) : (
-          <Link className={styles.navLink} href="/auth/signin">Connexion</Link>
+          <Link className={`${styles.navLink} ${styles.navLogin}`} href="/auth/signin">Connexion</Link>
         )}
       </div>
 
@@ -51,12 +51,12 @@ export default function Navbar() {
         {session ? (
           <>
             <span className={styles.navUser}>Bonjour {session.user.name}</span>
-            <button className={styles.navButton} onClick={() => { signOut({ callbackUrl: "/" }); toggleMenu(); }}>
+            <button className={`${styles.navButton} ${styles.navLogin}`} onClick={() => { signOut({ callbackUrl: "/" }); toggleMenu(); }}>
               Déconnexion
             </button>
           </>
         ) : (
-          <Link className={styles.navLink} href="/auth/signin" onClick={toggleMenu}>Connexion</Link>
+          <Link className={`${styles.navLink} ${styles.navLogin}`} href="/auth/signin" onClick={toggleMenu}>Connexion</Link>
         )}
       </div>
     </nav>

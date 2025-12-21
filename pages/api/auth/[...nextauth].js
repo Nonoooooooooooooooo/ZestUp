@@ -8,32 +8,20 @@ const users = [
 ];
 
 export default NextAuth({
-  providers: [
-    CredentialsProvider({
-      name: "Credentials",
-      credentials: {
-        email: { label: "Email", type: "text" },
-        password: { label: "Mot de passe", type: "password" },
-      },
-      async authorize(credentials) {
-        // Vérifie que l'utilisateur existe
-        const user = users.find(
-          (u) =>
-            u.email === credentials.email && u.password === credentials.password
-        );
-        if (user) {
-          return { id: user.id, name: user.name, email: user.email };
-        }
-        return null; // Retourne null si échec
-      },
-    }),
-  ],
-<<<<<<< HEAD
-  session: {
-    strategy: "jwt", // utilisation de JWT pour la session
+  callbacks: {
+    async jwt({ token, user }) {
+      // Ajoute les infos de l'utilisateur au token
+      if (user) token.user = user;
+      return token;
+    },
+    async session({ session, token }) {
+      // Ajoute user dans session pour le front
+      session.user = token.user;
+      return session;
+    },
   },
-  pages: {
-    signIn: "/auth/signin", // page de connexion
+  secret: process.env.NEXTAUTH_SECRET,
+  debug: process.env.NODE_ENV === "development",
   },
   callbacks: {
     async jwt({ token, user }) {
