@@ -73,7 +73,7 @@
 
 @media (max-width: 768px) {
   .navbar {
-    padding: 1.2rem 1.5rem; /* moins de padding horizontal sur mobile */
+    padding: 1.2rem 2.0rem; /* moins de padding horizontal sur mobile */
   }
   .menu { display: none; }
   .menuMobileIcon { display: block; }
