@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family:Montserrat+Alternates:wght@600;700;800&family=Playfair+Display:wght@700&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -75,7 +76,5 @@ img {
   max-width: 100%;
   border-radius: 10px;
 }
-
-@import url('https://fonts.googleapis.com/css2?family:Montserrat+Alternates:wght@600;700;800&family=Playfair+Display:wght@700&display=swap');
 
 
