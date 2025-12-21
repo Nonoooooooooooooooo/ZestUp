@@ -1,3 +1,32 @@
+.navUser {
+  color: #fff;
+  font-weight: 600;
+  margin-left: 1rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.navButton {
+  margin-left: 1rem;
+  padding: 0.4rem 1rem;
+  background: #ff7f50;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navButton:hover {
+  background: #ff5f2e;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+
 .navbar {
   display: flex;
   justify-content: space-between;
