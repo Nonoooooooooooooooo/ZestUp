@@ -1,73 +1,75 @@
-/* Hero.module.css */
-
 .hero {
   position: relative;
-  width: 100vw; /* plein écran horizontal */
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 
-.heroOverlay {
-  background: rgba(0,0,0,0.4);
-  padding: 2rem 1.5rem;
-  border-radius: 12px;
-  text-align: center;
-  color: white;
-  max-width: 600px;
-  width: 90%;
-  position: relative;
+/* Image Next.js */
+.heroImage {
+  object-fit: cover;
   z-index: 1;
-  animation: fadeInUp 1s ease forwards;
-  opacity: 0;
+}
+
+/* Overlay + texte */
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  color: white;
+  padding: 2rem;
 }
 
 .heroOverlay h1 {
-  font-size: 2.8rem;
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  font-weight: 900;
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
 }
 
 .heroOverlay p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  font-family: 'Poppins', sans-serif;
+  max-width: 650px;
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
 .heroOverlay button {
-  padding: 0.6rem 1.2rem;
-  border: none;
-  background: #ff7f50;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
+  padding: 0.9rem 1.8rem;
+  font-size: 1rem;
   font-weight: 600;
-  transition: background 0.3s ease, transform 0.3s ease;
+
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+
+  background: linear-gradient(90deg, #ff7f50, #ff5f2e);
+  color: white;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .heroOverlay button:hover {
-  background: #ff5f2e;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
 }
 
-/* Animation */
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(20px);}
-  100% { opacity: 1; transform: translateY(0);}
-}
-
-/* Responsive */
+/* MOBILE */
 @media (max-width: 768px) {
   .heroOverlay h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
+
   .heroOverlay p {
     font-size: 1rem;
-  }
-  .heroOverlay {
-    width: 95%;
-    padding: 1.5rem 1rem;
   }
 }
