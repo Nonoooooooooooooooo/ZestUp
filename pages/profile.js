@@ -5,7 +5,7 @@ import Footer from "../composants/Footer";
 import styles from "../styles/Profile.module.css";
 
 export default function ProfilePage() {
-  const { data: session } = useSession();
+  const { data: session, update } = useSession();
   const [name, setName] = useState(session?.user?.name || "");
   const [image, setImage] = useState(session?.user?.image || "");
   const [message, setMessage] = useState("");
@@ -22,30 +22,45 @@ export default function ProfilePage() {
     );
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Ici tu peux envoyer les données vers ton API ou base de données
-    setMessage("Profil mis à jour avec succès !");
+
+    const res = await fetch("/api/user/update", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, image }),
+    });
+
+    const data = await res.json();
+    if (data.success) {
+      setMessage("Profil mis à jour !");
+      // Mettre à jour la session pour Navbar
+      update();
+    } else {
+      setMessage("Erreur lors de la mise à jour");
+    }
   };
 
   return (
     <>
       <Navbar />
       <div className={styles.container}>
-        <h1>Mon profil</h1>
+        <h1 className={styles.title}>Mon profil</h1>
         <form className={styles.form} onSubmit={handleSubmit}>
-          <label>
+          <label className={styles.label}>
             Nom :
             <input
+              className={styles.input}
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </label>
 
-          <label>
+          <label className={styles.label}>
             URL de la photo de profil :
             <input
+              className={styles.input}
               type="text"
               value={image}
               onChange={(e) => setImage(e.target.value)}
@@ -53,13 +68,13 @@ export default function ProfilePage() {
             />
           </label>
 
-          <button type="submit">Enregistrer</button>
+          <button type="submit" className={styles.button}>Enregistrer</button>
         </form>
 
         {message && <p className={styles.success}>{message}</p>}
 
         <div className={styles.logout}>
-          <button onClick={() => signOut({ callbackUrl: "/" })}>
+          <button className={styles.logoutButton} onClick={() => signOut({ callbackUrl: "/" })}>
             Déconnexion
           </button>
         </div>
