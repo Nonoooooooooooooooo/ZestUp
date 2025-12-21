@@ -1,39 +1,30 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import prisma from "../../../prisma.config";
-import bcrypt from "bcrypt";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 export default NextAuth({
-  adapter: PrismaAdapter(prisma),
+  adapter: PrismaAdapter(prisma), // <- essentiel pour que NextAuth écrive dans SQLite
   providers: [
     CredentialsProvider({
       name: "Credentials",
       credentials: {
         email: { label: "Email", type: "text" },
-        password: { label: "Mot de passe", type: "password" }
+        password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        if (!credentials) return null;
-
         const user = await prisma.user.findUnique({
-          where: { email: credentials.email }
+          where: { email: credentials.email },
         });
-
-        if (!user) return null;
-
-        const isValid = await bcrypt.compare(credentials.password, user.password);
-        if (!isValid) return null;
-
-        return user;
-      }
-    })
+        if (user && credentials.password === user.password) {
+          return user;
+        }
+        return null;
+      },
+    }),
   ],
-  session: {
-    strategy: "jwt"
-  },
-  pages: {
-    signIn: "/auth/signin"
-  },
+  session: { strategy: "database" },
   secret: process.env.NEXTAUTH_SECRET,
 });
