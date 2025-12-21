@@ -28,6 +28,7 @@ export default NextAuth({
       },
     }),
   ],
+<<<<<<< HEAD
   session: {
     strategy: "jwt", // utilisation de JWT pour la session
   },
@@ -46,4 +47,25 @@ export default NextAuth({
       return session;
     },
   },
+=======
+  session: {
+    strategy: "jwt", // utilisation de JWT pour la session
+  },
+  pages: {
+    signIn: "/auth/signin", // page de connexion
+  },
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) token.user = user;
+      return token;
+    },
+    async session({ session, token }) {
+      session.user = token.user;
+      return session;
+    },
+  },
+  secret: process.env.NEXTAUTH_SECRET,
+  debug: process.env.NODE_ENV === "development",
+>>>>>>> f25e3f3 (Enable NextAuth secret/debug; ignore .env.local, node_modules, .next)
 });
+
