@@ -58,11 +58,11 @@
 }
 
 /* Mobile */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .sectionTitle {
     font-size: 2.2rem;
   }
   .sectionTitle::after {
-    width: 0px;
+    width: 100px;
   }
 }
