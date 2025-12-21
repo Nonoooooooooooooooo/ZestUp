@@ -63,6 +63,6 @@
     font-size: 2.2rem;
   }
   .sectionTitle::after {
-    width: 100px;
+    width: 0px;
   }
 }
