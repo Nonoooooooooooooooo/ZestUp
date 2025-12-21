@@ -1,15 +1,17 @@
 {
   "name": "zestup",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
- "dependencies": {
-  "next": "13.x.x",
-  "react": "18.x.x",
-  "react-dom": "18.x.x",
-  "next-auth": "^4.x.x"
+  "dependencies": {
+    "next": "13.5.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "next-auth": "^4.29.0",
+    "react-icons": "^4.11.0"
   }
 }
