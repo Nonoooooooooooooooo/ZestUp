@@ -64,7 +64,7 @@
   right: 5%;
   border-radius: 12px;
   box-shadow: 0 3px 12px rgba(0,0,0,0.25);
-  width: 90vw; /* prend presque toute la largeur sur mobile */
+  width: 110vw; /* prend presque toute la largeur sur mobile */
 }
 
 .menuMobile.open {
