@@ -8,52 +8,39 @@ const users = [
 ];
 
 export default NextAuth({
-  callbacks: {
-    async jwt({ token, user }) {
-      // Ajoute les infos de l'utilisateur au token
-      if (user) token.user = user;
-      return token;
-    },
-    async session({ session, token }) {
-      // Ajoute user dans session pour le front
-      session.user = token.user;
-      return session;
-    },
-  },
-  secret: process.env.NEXTAUTH_SECRET,
-  debug: process.env.NODE_ENV === "development",
-  },
-  callbacks: {
-    async jwt({ token, user }) {
-      // Ajoute les infos de l'utilisateur au token
-      if (user) token.user = user;
-      return token;
-    },
-    async session({ session, token }) {
-      // Ajoute user dans session pour le front
-      session.user = token.user;
-      return session;
-    },
-  },
-=======
+  providers: [
+    CredentialsProvider({
+      name: "Credentials",
+      credentials: {
+        email: { label: "Email", type: "text" },
+        password: { label: "Mot de passe", type: "password" },
+      },
+      async authorize(credentials) {
+        const user = users.find(
+          (u) =>
+            u.email === credentials.email && u.password === credentials.password
+        );
+        if (user) return { id: user.id, name: user.name, email: user.email };
+        return null;
+      },
+    }),
+  ],
   session: {
-    strategy: "jwt", // utilisation de JWT pour la session
+    strategy: "jwt", // JWT pour la session
   },
   pages: {
     signIn: "/auth/signin", // page de connexion
   },
   callbacks: {
     async jwt({ token, user }) {
-      if (user) token.user = user;
+      if (user) token.user = user; // ajout user uniquement à la connexion
       return token;
     },
     async session({ session, token }) {
-      session.user = token.user;
+      if (token?.user) session.user = token.user; // protège contre undefined
       return session;
     },
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET || "testsecret",
   debug: process.env.NODE_ENV === "development",
->>>>>>> f25e3f3 (Enable NextAuth secret/debug; ignore .env.local, node_modules, .next)
 });
-
