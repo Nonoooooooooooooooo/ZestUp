@@ -1,12 +1,12 @@
-import { PrismaClient } from "@prisma/client";
+import { defineConfig } from "prisma/config";
+import "dotenv/config";
 
-const prisma = new PrismaClient({
+export default defineConfig({
   datasources: {
     db: {
-      url: process.env.DATABASE_URL,
+      url: "file:./dev.db",
     },
   },
 });
 
-export default prisma;
 
